@@ -1,95 +1,63 @@
-// Outer Space
-background (0,0,0);
-size (500,500);
+int x=20;
+int y=0;
+int bounce=2;
 
-// Earth
-fill (#27F2D9,100);
-ellipse (500,500,310,310);
+float angle;
+float jitter;
+PImage img;
 
-fill (#1A7FC9);
-noStroke ();
-ellipse (500,500,300,300);
+void setup () {
+  size (500,500);
+}
 
-// Moon
-fill (#5D6164);
-ellipse (300,350,75,75);
+void draw () {
+  background (0);
+    img = loadImage ("A hill for Ec.jpg");
+  image (img,0,0,width/1,height/1);
+  //Neck
+  fill (#F5DC8A);
+   if (second() % 2 == 0) {  
+   
+  }
+  angle = angle + jitter;
+  translate(width/3, height/3);
+  rotate(50);
+  rect (x-15,y+40,30,30);
+  
+  //Head
+  fill (#F5DC8A);
+  ellipse (x,y,100,100);
+  
+  //Left Arm 
+  fill (#F5DC8A);
+  rect (x,y+70,140,20);
+  
+  //Left Leg
+  fill (120);
+  rect (x,y+140,170,30);
+  
+  //Body
+  fill (255);
+  
+  rect (x-35,y+60,70,100);
 
-fill (#49504F);
-noStroke ();
-ellipse (320,340,5,5);
+  //Right Arm
+  fill (#F5DC8A);
+  rect (x,y+70,-140,20);
+  
+  //Right Leg
+  fill (120);
+  rect (x,y+140,-170,30);
+  
+  x=x+bounce;
+  
+  if(x>width-250 || x<-30)
+  {
+    bounce=bounce*(-1);
+  }
+  textSize (17);
+  fill (#500447);
+  text ("1v1 me bro..I bet u can't do anything better than this",-150,-50);
 
-ellipse (310,320,5,5);
-
-ellipse (325,330,5,5);
-
-ellipse (330,360,5,5);
-
-ellipse (300,320,5,5);
-
-ellipse (270,360,5,5);
-
-ellipse (280,340,5,5);
-
-ellipse (265,345,5,5);
-
-ellipse (300,380,5,5);
-
-ellipse (290,360,5,5);
-
-ellipse (320,370,5,5);
-
-ellipse (310,350,5,5);
-
-// Sun
-fill (#FCE008,300);
-ellipse (75,100,55,55);
-
-fill (#FA8F1C,150);
-ellipse (75,100,50,50);
-
-// Mercury
-fill (#9B9696);
-ellipse (90,20,5,5);
-
-// Venus
-fill (#FCCC08);
-ellipse (240,160,10,10);
-
-// Mars
-fill (#E85500);
-ellipse (485,15,5,5);
-
-noStroke ();
-fill (#19AF44);
-rect (430,410,50,50);
-
-rect (425,420,5,30);
-
-rect (435,410,15,80);
-
-rect (440,480,20,10);
-
-rect (470,460,10,10);
-
-rect (480,420,5,25);
-
-rect (420,390,70,20);
-
-rect (440,385,25,5);
-
-rect (450,380,30,5);
-
-rect (410,390,20,20);
-
-rect (490,390,10,20);
-
-fill (#1A7FC9);
-rect (460,390,20,10);
-
-rect (410,390,5,5);
-
-rect (410,405,5,5);
-
-rect (435,475,5,15);
-
-rect (490,405,15,5);
+  text ("oh hoi teetcher pls giv meh xtra cridits i wokd vally hard on tis",-225,200);
+}
